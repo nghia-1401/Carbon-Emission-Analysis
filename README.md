@@ -162,79 +162,92 @@ Result: The industry groups of these products
 ### 3. What are the industries with the highest contribution to carbon emissions?
 ```sql
 SELECT 
-	in_gr.industry_group, 
-	ROUND(SUM(pr_em.carbon_footprint_pcf),2) AS carbon_emissions
-FROM product_emissions pr_em
-JOIN industry_groups in_gr ON pr_em.industry_group_id = in_gr.id
-GROUP BY in_gr.industry_group
-ORDER BY ROUND(SUM(pr_em.carbon_footprint_pcf),2) DESC
+	t.industry_group "Industry group", 
+	ROUND(SUM(t.avg_pcf),2) "Total Industry emissions"
+FROM (
+ 	SELECT pr_em.product_name, in_gr.industry_group, AVG(pr_em.carbon_footprint_pcf) AS avg_pcf
+  	FROM product_emissions pr_em
+  	JOIN industry_groups in_gr ON pr_em.industry_group_id = in_gr.id 
+  	GROUP BY pr_em.product_name 
+) AS t
+GROUP BY t.industry_group
+ORDER BY ROUND(SUM(t.avg_pcf),2) DESC
 LIMIT 10;
 ```
 
 Result: 
-| industry_group                                   | carbon_emissions | 
-| -----------------------------------------------: | ---------------: | 
-| Electrical Equipment and Machinery               | 9801558.00       | 
-| Automobiles & Components                         | 2582264.00       | 
-| Materials                                        | 577595.00        | 
-| Technology Hardware & Equipment                  | 363776.00        | 
-| Capital Goods                                    | 258712.00        | 
-| "Food, Beverage & Tobacco"                       | 111131.00        | 
-| "Pharmaceuticals, Biotechnology & Life Sciences" | 72486.00         | 
-| Chemicals                                        | 62369.00         | 
-| Software & Services                              | 46544.00         | 
-| Media                                            | 23017.00         | 
+| Industry group                                   | Total Industry emissions | 
+| -----------------------------------------------: | -----------------------: | 
+| Electrical Equipment and Machinery               | 9778552.00               | 
+| Automobiles & Components                         | 2318887.33               | 
+| Materials                                        | 378930.00                | 
+| Technology Hardware & Equipment                  | 236742.93                | 
+| Capital Goods                                    | 158355.42                | 
+| "Food, Beverage & Tobacco"                       | 93059.33                 | 
+| "Pharmaceuticals, Biotechnology & Life Sciences" | 72486.00                 | 
+| Chemicals                                        | 39042.67                 | 
+| Software & Services                              | 23990.75                 | 
+| Media                                            | 14139.33                 | 
 
 ### 4. What are the companies with the highest contribution to carbon emissions?
 ```sql
 SELECT 
-	c.company_name,
-	ROUND(SUM(pr_em.carbon_footprint_pcf),2) AS carbon_emissions
-FROM product_emissions pr_em
-JOIN companies c ON pr_em.company_id = c.id
-GROUP BY c.company_name
-ORDER BY ROUND(SUM(pr_em.carbon_footprint_pcf),2) DESC
+	t.company_name "Company name", 
+	ROUND(SUM(t.avg_pcf),2) "Total Company emissions"
+FROM (
+ 	SELECT pr_em.product_name, c.company_name, AVG(pr_em.carbon_footprint_pcf) AS avg_pcf
+  	FROM product_emissions pr_em
+  	JOIN companies c ON pr_em.company_id = c.id 
+  	GROUP BY pr_em.product_name 
+) AS t
+GROUP BY t.company_name
+ORDER BY ROUND(SUM(t.avg_pcf),2) DESC
 LIMIT 10;
 ```
 
 Result: 
-| company_name                            | carbon_emissions | 
-| --------------------------------------: | ---------------: | 
-| "Gamesa Corporación Tecnológica, S.A."  | 9778464.00       | 
-| Daimler AG                              | 1594300.00       | 
-| Volkswagen AG                           | 655960.00        | 
-| "Mitsubishi Gas Chemical Company, Inc." | 212016.00        | 
-| "Hino Motors, Ltd."                     | 191687.00        | 
-| Arcelor Mittal                          | 167007.00        | 
-| Weg S/A                                 | 160655.00        | 
-| General Motors Company                  | 137007.00        | 
-| "Lexmark International, Inc."           | 132012.00        | 
-| "Daikin Industries, Ltd."               | 105600.00        | 
+| Company name                            | Total Company emissions | 
+| --------------------------------------: | ----------------------: | 
+| "Gamesa Corporación Tecnológica, S.A."  | 9778464.00              | 
+| Daimler AG                              | 1594300.00              | 
+| Volkswagen AG                           | 459722.00               | 
+| "Hino Motors, Ltd."                     | 191687.00               | 
+| Arcelor Mittal                          | 167007.00               | 
+| "Mitsubishi Gas Chemical Company, Inc." | 106008.00               | 
+| "Daikin Industries, Ltd."               | 94439.25                | 
+| Waters Corporation                      | 72486.00                | 
+| General Motors Company                  | 69926.33                | 
+| CJ Cheiljedang                          | 67866.00                | 
 
 ### 5. What are the countries with the highest contribution to carbon emissions?
 ```sql
 SELECT 
-	cou.country_name,
-	ROUND(SUM(pr_em.carbon_footprint_pcf),2) AS carbon_emissions
-FROM product_emissions pr_em
-JOIN countries cou ON pr_em.company_id = cou.id
-GROUP BY cou.country_name
-ORDER BY ROUND(SUM(pr_em.carbon_footprint_pcf),2) DESC
+	t.country_name "Country name", 
+	ROUND(SUM(t.avg_pcf),2) "Total Country emissions"
+FROM (
+ 	SELECT pr_em.product_name, cou.country_name, AVG(pr_em.carbon_footprint_pcf) AS avg_pcf
+  	FROM product_emissions pr_em
+  	JOIN countries cou ON pr_em.country_id = cou.id 
+  	GROUP BY pr_em.product_name 
+) AS t
+GROUP BY t.country_name
+ORDER BY ROUND(SUM(t.avg_pcf),2) DESC
 LIMIT 10;
 ```
 
 Result:
-| country_name | carbon_emissions | 
-| -----------: | ---------------: | 
-| Germany      | 9778464.00       | 
-| Lithuania    | 212016.00        | 
-| Greece       | 191687.00        | 
-| Japan        | 132012.00        | 
-| Colombia     | 105600.00        | 
-| South Africa | 35505.00         | 
-| France       | 21364.00         | 
-| Italy        | 20000.00         | 
-| Ireland      | 11160.00         | 
-| India        | 9328.00          | 
+| Country name | Total Country emissions | 
+| -----------: | ----------------------: | 
+| Spain        | 9782467.50              | 
+| Germany      | 2054987.00              | 
+| Japan        | 507438.92               | 
+| USA          | 317316.75               | 
+| Luxembourg   | 167007.00               | 
+| South Korea  | 101830.50               | 
+| Brazil       | 57531.67                | 
+| Taiwan       | 55703.27                | 
+| Netherlands  | 40872.50                | 
+| India        | 22618.67                | 
 
-### 6. 
+### 6. What is the trend of carbon footprints (PCFs) over the years?
+### 7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
