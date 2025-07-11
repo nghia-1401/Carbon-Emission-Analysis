@@ -250,4 +250,26 @@ Result:
 | India        | 22618.67                | 
 
 ### 6. What is the trend of carbon footprints (PCFs) over the years?
+```sql
+SELECT 
+	year, 
+	ROUND(SUM(avg_pcf), 2) AS "Total emissions"
+FROM (
+	SELECT year, product_name, AVG(carbon_footprint_pcf) AS avg_pcf
+	FROM product_emissions 
+	GROUP BY product_name, year
+)
+GROUP BY year
+ORDER BY year ASC;
+```
+
+Result:
+| year | Total emissions | 
+| ---: | --------------: | 
+| 2013 | 496005.50       | 
+| 2014 | 548213.50       | 
+| 2015 | 10810407.00     | 
+| 2016 | 1608962.17      | 
+| 2017 | 224799.67       | 
+
 ### 7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
