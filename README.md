@@ -166,8 +166,7 @@ Result: The industry groups of these products
 | Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.00        | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00        | 
 
-Conclusion:
-
+	Conclusion:
 	Wind turbine products have the highest carbon emissions, leading the Electrical Equipment and Machinery industry in emission levels. The Automobiles & Components and Materials industries have comparable emission levels in the table above.
 ### 3. What are the industries with the highest contribution to carbon emissions?
 ```sql
@@ -199,6 +198,10 @@ Result:
 | Software & Services                              | 23990.75                 | 
 | Media                                            | 14139.33                 | 
 
+	Conclusion:
+ 	Electrical Equipment and Machinery ranks first with 9,778,552 carbon units, accounting for approximately four times the emissions of the second-highest industry.
+  	Automobiles & Components has 2,318,887.33 carbon units — reflecting significant emissions from automobile and component manufacturing.
+   	Most of the remaining industries have relatively low emissions, indicating an opportunity to improve environmental outcomes by focusing efforts on the major emitting sectors first.
 ### 4. What are the companies with the highest contribution to carbon emissions?
 ```sql
 SELECT 
