@@ -135,7 +135,8 @@ Result: Top 10 products contribute the most to carbon emissions
 
 <img width="796" height="493" alt="image" src="https://github.com/user-attachments/assets/d35a76e3-0f87-4d11-8259-95599d7dca90" />
 
-	Conclusion:
+Conclusion:
+
 	Among the top 10 products with the highest CO₂ emissions, there is a significant gap between the emissions of wind turbines and other products.
  	The turbine with a capacity of 5 megawatts has the highest carbon emissions (over 3 million carbon units), followed by the 2-megawatt turbine (over 1 million carbon units).
   	The remaining products have relatively low emissions compared to the wind turbines.
@@ -166,7 +167,8 @@ Result: The industry groups of these products
 | Mercedes-Benz S-Class (S 500)                                                                                                      | Automobiles & Components           | 85000.00        | 
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00        | 
 
-	Conclusion:
+Conclusion:
+ 
 	Wind turbine products have the highest carbon emissions, leading the Electrical Equipment and Machinery industry in emission levels. The Automobiles & Components and Materials industries have comparable emission levels in the table above.
 ### 3. What are the industries with the highest contribution to carbon emissions?
 ```sql
@@ -198,7 +200,8 @@ Result:
 | Software & Services                              | 23990.75                 | 
 | Media                                            | 14139.33                 | 
 
-	Conclusion:
+Conclusion:
+
  	Electrical Equipment and Machinery ranks first with 9,778,552 carbon units, accounting for approximately four times the emissions of the second-highest industry.
   	Automobiles & Components has 2,318,887.33 carbon units — reflecting significant emissions from automobile and component manufacturing.
    	Most of the remaining industries have relatively low emissions, indicating an opportunity to improve environmental outcomes by focusing efforts on the major emitting sectors first.
@@ -262,6 +265,15 @@ Result:
 | Netherlands  | 40872.50                | 
 | India        | 22618.67                | 
 
+Conclusion:
+
+ 	Spain has a total carbon emission of 9,782,467.5 units, significantly higher than the other countries on the list.
+  	Specifically, Spain’s emissions are:
+		Nearly 5 times higher than Germany (the second-highest),
+		Nearly 20 times higher than the USA (ranked fourth),
+		More than 430 times higher than India (ranked last).
+	Focusing on controlling and improving technology in Spain could have a major impact on reducing total emissions across the entire supply chain.
+	Although other countries have lower emissions, they should still be monitored — especially if their production levels are expected to grow in the future.
 ### 6. What is the trend of carbon footprints (PCFs) over the years?
 ```sql
 SELECT 
@@ -284,6 +296,7 @@ Result:
 | 2015 | 10810407.00     | 
 | 2016 | 1608962.17      | 
 | 2017 | 224799.67       | 
+
 
 ### 7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 
