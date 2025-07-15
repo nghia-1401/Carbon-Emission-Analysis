@@ -235,6 +235,10 @@ Result:
 | General Motors Company                  | 69926.33                | 
 | CJ Cheiljedang                          | 67866.00                | 
 
+Conclusion:
+
+ 	Gamesa Corporación Tecnológica, S.A. is the company with the highest carbon emissions, far surpassing all other companies on the list.
+	Companies in the automotive and heavy industry sectors, such as Daimler, Volkswagen, Hino Motors, and Arcelor Mittal, also contribute significantly to the total emissions.
 ### 5. What are the countries with the highest contribution to carbon emissions?
 ```sql
 SELECT 
@@ -297,7 +301,13 @@ Result:
 | 2016 | 1608962.17      | 
 | 2017 | 224799.67       | 
 
+<img width="764" height="476" alt="image" src="https://github.com/user-attachments/assets/2d716cfa-24c3-41e9-87e9-256c9caa5a9d" />
 
+Conclusion:
+
+ 	In 2015, carbon emissions spiked significantly, reaching 10,810,407 units — approximately 20 times higher than in 2014 and around 50 times higher than in 2013.
+	This is a clear anomaly, suggesting that one or more high-emission projects/products may have been recorded during that year, or there may have been an error in data collection or processing.
+	In the remaining years, carbon emissions were significantly lower compared to 2015.
 ### 7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?
 
 ```sql
