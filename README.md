@@ -135,7 +135,8 @@ Result: Top 10 products contribute the most to carbon emissions
 
 <img width="796" height="493" alt="image" src="https://github.com/user-attachments/assets/d35a76e3-0f87-4d11-8259-95599d7dca90" />
 
-Conclusion: 
+Conclusion:
+
 	Among the top 10 products with the highest CO₂ emissions, there is a significant gap between the emissions of wind turbines and other products.
  	The turbine with a capacity of 5 megawatts has the highest carbon emissions (over 3 million carbon units), followed by the 2-megawatt turbine (over 1 million carbon units).
   	The remaining products have relatively low emissions compared to the wind turbines.
@@ -167,6 +168,7 @@ Result: The industry groups of these products
 | Mercedes-Benz SL (SL 350)                                                                                                          | Automobiles & Components           | 72000.00        | 
 
 Conclusion:
+
 	Wind turbine products have the highest carbon emissions, leading the Electrical Equipment and Machinery industry in emission levels. The Automobiles & Components and Materials industries have comparable emission levels in the table above.
 ### 3. What are the industries with the highest contribution to carbon emissions?
 ```sql
