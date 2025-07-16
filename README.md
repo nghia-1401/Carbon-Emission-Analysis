@@ -363,7 +363,8 @@ Result:
 | Tobacco                                                                | 0.00           | 0.00           | 1.00           | 0.00           | 0.00           | 
 | Semiconductors & Semiconductors Equipment                              | 0.00           | 0.00           | 3.00           | 0.00           | 0.00           | 
 
-Sau khi loại bỏ các nhóm ngành công nghiệp bị thiếu dữ liệu, còn lại 3 nhóm ngành công nghiệp: 
+After eliminating industry groups with missing data, three industry groups remained: Technology Hardware & Equipment, Capital Goods, Software & Services
+
 Conclusion:
 
  	The Technology Hardware & Equipment group had the highest carbon emissions in 2014 and 2015, followed by a sharp decline in 2016.
