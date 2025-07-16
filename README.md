@@ -365,6 +365,8 @@ Result:
 
 After eliminating industry groups with missing data, three industry groups remained: Technology Hardware & Equipment, Capital Goods, Software & Services
 
+<img width="684" height="421" alt="image" src="https://github.com/user-attachments/assets/d9ae86b8-620e-48b1-a514-951a7013147f" />
+
 Conclusion:
 
  	The Technology Hardware & Equipment group had the highest carbon emissions in 2014 and 2015, followed by a sharp decline in 2016.
